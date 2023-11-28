@@ -1,0 +1,30 @@
+[package]
+name = "frc-value"
+version = "0.2.0"
+edition = "2021"
+description = "A common value interface for rust frc apps"
+license = "MIT"
+publish = false
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+rmpv = { version = "1.0", optional = true }
+serde_json = { version = "1.0", optional = true }
+bytes = { version = "1.5.0", features = ["serde"] }
+# protobuf = { version = "3.3.0", features = ["bytes", "with-bytes"]}
+thiserror = "1.0.50"
+inventory = "0.3.13"
+fxhash = "0.2.1"
+logos = "0.13.0"
+frc-values-macros = { version = "0.1.0", path = "../frc-values-macros" }
+
+# setup dependencies for testing
+[dev-dependencies]
+serde_json = "1"
+
+[features]
+rmpv-casting = [ "rmpv" ]
+json-casting = [ "serde_json" ]
+
+[profile.release]
+lto = true

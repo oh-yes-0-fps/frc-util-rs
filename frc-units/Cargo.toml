@@ -1,0 +1,26 @@
+[package]
+name = "frc-units"
+version = "0.1.1"
+edition = "2021"
+publish = false
+
+
+[dependencies]
+nalgebra = {version = "0.32", optional = true}
+num = "0.4"
+simba = {version = "0.8", optional = true}
+frc-units-macros = { version = "0.1.0", path = "../frc-units-macros" }
+serde = { version = "1.0", optional = true}
+
+
+[features]
+default = ["with-ref-ops"]
+with-ref-ops = []
+with-nalgebra = ["nalgebra", "simba"]
+with-serde = ["serde"]
+
+# this is quite a beefy crate, so we want to optimize for size
+[profile.release]
+lto = true
+opt-level = "z"
+codegen-units = 1

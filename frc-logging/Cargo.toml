@@ -1,0 +1,10 @@
+[package]
+name = "frc-logging"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+tracing = {version = "0.1.40", features = ["valuable"]}
+tracing-unwrap = {version = "0.10.0", default-features = false, features = ["log-location"]}
+

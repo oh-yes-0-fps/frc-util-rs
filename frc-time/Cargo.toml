@@ -1,0 +1,12 @@
+[package]
+name = "frc-time"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+
+[dependencies]
+ctor = "0.2.5"
+
+[profile.release]
+lto = true

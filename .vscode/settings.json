@@ -1,0 +1,5 @@
+{
+    "rust-analyzer.linkedProjects": [
+        ".\\frc-values\\Cargo.toml"
+    ]
+}

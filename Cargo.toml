@@ -1,0 +1,14 @@
+[workspace]
+members = [
+    "frc-values",
+    "frc-values-macros",
+    "frc-logging",
+    "frc-units",
+    "frc-units-macros",
+    "frc-time"
+]
+workspace.resolver = "2"
+
+[profile.release]
+lto = true
+opt-level = 3
